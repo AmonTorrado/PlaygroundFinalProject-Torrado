@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Estudiante, Profesor, Curso, Entregable
-# Register your models here.
-admin.site.register(Estudiante)
-admin.site.register(Profesor)
-admin.site.register(Curso)
-admin.site.register(Entregable)
+from trabajo.models import Cliente, Venta, Insumo, Producto 
+
+admin.site.register(Cliente)
+admin.site.register(Venta)
+admin.site.register(Insumo)
+admin.site.register(Producto)

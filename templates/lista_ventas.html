@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+<h1>Lista Ventas</h1>
+
+{% for venta in ventas %}
+    <li>{{venta}}
+        <p>
+            <a href="{% url 'ventas detalle' venta.pk %}">Ver</a>
+            |
+            <a href="{% url 'ventas editar' venta.pk %}">Editar</a>
+            |
+            <a href="{% url 'ventas eliminar' venta.pk %}">Borrar</a>
+        </p>
+    </li>
+
+{% endfor %}
+
+{% endblock %}
