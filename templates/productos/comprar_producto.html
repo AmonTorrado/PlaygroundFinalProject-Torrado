@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<br>
+
+<form style="color:#00FFFF;" action='/comprarProducto' method="post">
+    {% csrf_token %}
+    <p> Nombre del producto: <input type = "text" name="nombre">
+    <p> Cantidad a comprar: <input type = "number" name="cantidad">
+    <br>
+    <input type = "submit" value="Comprar">
+    </p>
+    <a style="color:#FFFFFF;" href="{% url 'listaStock' %}">Volver a listado de productos</a>
+    </p>    
+ </form>
+
+{% if producto %}
+
+    Se compró el producto: {{producto}}, Quedan en stock: {{cantidad_stock}} unidades
+    <br>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+{% if user.is_superuser%}
+    <h1 style="color:#FFFFFF;">Lista Stock</h1>
+    {% else %}
+    <h1 style="color:#FFFFFF;">Listado de productos en venta</h1>
+    {% endif %}
+{% for producto in stock %}
+    <li style="color:#00FFFF;">Nombre de producto: {{producto.nombre}} <br> cantidad en stock: {{producto.cantidad_en_stock}}</li>
+    {% if user.is_superuser %}
+        <button style="width:300px">
+        <a href="{% url 'producto eliminar' producto.pk %}"> Eliminar</a>
+        </button>
+        <button style="width:300px">    
+        <a href="{% url 'producto editar' producto.pk %}"> Editar</a>
+        </button>
+            {% else %}
+            <button style="width:300px">
+            <a href="{% url 'comprarProducto' %}"> Comprar </a>
+            </button>
+            <button style="width:300px">    
+            <a href="{% url 'producto detalle' producto.pk %}"> Ver producto </a>
+            </button>
+    {% endif %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<section class="us_section layout_padding">
+<main>
+<br>
+
+<form action="" method="POST">
+    {% csrf_token %}
+        {{ formulario.as_p }}
+    <button type="submit">Crear Usuario</button>
+</form>
+</main>
+</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+<h1 style="color:#FFFFFF;">Lista de Proveedores</h1>
+
+{% for proveedor in proveedores %}
+    <li style="color:#00FFFF;">{{proveedor.nombre}},<br>{{proveedor.email}}
+        <p>
+            <a style="color:#FFFFFF;" href="{% url 'proveedor detalle' proveedor.pk %}">Ver</a>
+            |
+            <a style="color:#FFFFFF;" href="{% url 'proveedor editar' proveedor.pk %}">Editar</a>
+            |
+            <a style="color:#FFFFFF;" href="{% url 'proveedor eliminar' proveedor.pk %}">Borrar</a>
+        </p>
+    </li>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+<h1 style="color:#FFFFFF;">Proveedor Detalle</h1>
+
+<p style="color:#FFFFFF;">Nombre del proveedor: <i style="color:#00FFFF;">{{proveedor.nombre}}</i></p>
+<p style="color:#FFFFFF;">Número de celular: <i style="color:#00FFFF;">{{proveedor.nro_cel}}</i></p>
+<p style="color:#FFFFFF;">Email: <i style="color:#00FFFF;">{{proveedor.email}}</i></p>
+<p style="color:#FFFFFF;">Producto provisto: <i style="color:#00FFFF;">{{proveedor.producto_asociado}}</i></p>
+<p>
+    <a style="color:#FFFFFF;" href="{% url 'proveedores lista' %}">Volver a proveedores</a>
+</p>
+
+{% endblock %}

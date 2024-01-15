@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<br>
+
+{% for proveedor in proveedores %}
+    <li>Nombre de proveedor: {{proveedor.nombre}} <br> Email: {{proveedor.email}}</li>
+    <button style="width:300px">
+        <a href="{% url 'eliminar proveedor' proveedor.nombre %}"> Eliminar</a>
+    </button>
+    <button style="width:300px">    
+        <a href="{% url 'editar proveedor' proveedor.nombre %}"> Editar</a>
+    </button>
+
+{% endfor %}
+{% endblock %}

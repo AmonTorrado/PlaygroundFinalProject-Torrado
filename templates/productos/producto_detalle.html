@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+<br>
+
+<h1 style="color:#00FFFF;">Datos del producto</h1>
+<p style="color:#FFFFFF;" >Nombre del producto: <i>{{producto.nombre}}</i></p>
+<p style="color:#FFFFFF;">Descripción: <i>{{producto.descripcion}}</i></p>
+<p style="color:#FFFFFF;">Cantidad en stock: <i>{{producto.cantidad_en_stock}}</i></p>
+<p style="color:#FFFFFF;"> Imagen de Poducto: </p>
+<br><img src="{{producto.imagen.url}}"  alt="" height="300px" width="300px">
+<br>
+</p>
+    <a style="color:#FFFFFF;" href="{% url 'listaStock' %}">Volver a Stock</a>
+</p>
+{% endblock %}

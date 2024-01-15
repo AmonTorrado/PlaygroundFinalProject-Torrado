@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+
+<h1 style="color:#FFFFFF;">Eliminar Producto</h1>
+
+<form style="color:#00FFFF;" action="" method="POST">
+    {% csrf_token %}
+    Estas seguro que deseas eliminar a {{producto.nombre}}??
+    <input type="submit" value="Eliminar">
+</form>
+
+{% endblock %}

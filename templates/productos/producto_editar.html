@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenido %}
+<h1 style="color:#FFFFFF;">Editar Producto</h1>
+
+<form style="color:#00FFFF;" action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Editar">
+</form>
+
+{% endblock contenido %}
